@@ -1,0 +1,80 @@
+<!--ok yea holdon-->
+<!--how tf do I bring js code into an html file-->
+
+<!DOCTYPE html>
+<html>
+<style>
+    .vertex {
+        background-color:  rgba(255, 1, 1, 0);
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1
+        
+    }
+
+    /*okay, so do .name for a class, but used #name for like identifying something by it's id?
+    In short, .class, #id*/
+    #shapeDisplay {
+        /*background-color: rgba(0, 255, 145, 0.621);*/
+        top: 0;
+        left: 0; /*hrmmmmmmmmmmm >:(*/
+        z-index: 100;
+    }
+</style>
+
+
+
+<head>
+    <meta charset = "UTF-8">
+</head>
+
+<body style = "background-color:rgb(43, 229, 220)">
+
+<h2>Cube :)</h2>
+
+<!--okay so I'm hard coding this for just a cube rn-->
+
+<div class = "vertex" id = "v1"></div>
+<div class = "vertex" id = "v2"></div>
+<div class = "vertex" id = "v3"></div>
+<div class = "vertex" id = "v4"></div>
+<div class = "vertex" id = "v5"></div>
+<div class = "vertex" id = "v6"></div>
+<div class = "vertex" id = "v7"></div>
+<div class = "vertex" id = "v8"></div>
+
+<!--Input text boxes for rotation degrees-->
+
+<input type = "text" id = "xInput" placeholder = "x degrees" position = "absolute">
+<input type = "text" id = "yInput" placeholder = "y degrees" position = "absolute">
+<input type = "text" id = "zInput" placeholder = "z degrees" position = "absolute">
+
+
+<!--Button to update values-->
+
+<button onclick = "applyRotation()">Apply Rotation</button>
+
+
+<br>
+<input type = "range" id = "scalFactor" name = "scalFactor" min = "0.5" max = "1.5" step = "0.01" value = "1" oninput = "slidyScale()" position = "absolute">
+<label for = "scalFactor" id = "scalWhy" position = "absolute">Scaling Factor: 1 </label>
+<br>
+<!--<input type = "button" id = "boogieBtn" value = "Press to control" onclick = "toggleBoogie()" position = "absolute"></input>-->
+
+<!--NOTE: document.write() wipes the whole page :(, so instead do something like this:-->
+<!---->
+<p id = "original" position = "absolute"></p>
+<p id = "translationMatrixText" position = "absolute"></p>
+<p id = "output" position = "absolute"></p>
+<p id = "shifting data" position = "absolute"></p>
+
+<canvas id = "shapeDisplay" style = "position: absolute; z-index: -1"></canvas>
+
+<!--okay so I think the main thing is using these "script" tags-->
+<script src = "cubeBuilder.js"></script>
+
+</body>
+</html>
